@@ -1,0 +1,30 @@
+class Solution(object):
+    def addBinary(self,a,b):
+        i=len(a)-1
+        j=len(b)-1
+        res=""
+        carry=0
+
+        while(i>=0 or j>=0):
+            total=carry
+            if(i>=0):
+                total+=int(a[i])
+                i-=1
+            if(j>=0):
+                total+=int(b[j])
+                j-=1
+
+            res+=str(total%2)
+
+
+            if(total>1):
+                carry=1
+        
+        if(carry==1):
+            res+="1"
+        
+        return res[::-1]
+
+
+                
+
